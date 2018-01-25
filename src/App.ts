@@ -1,4 +1,5 @@
 import * as express from 'express';
+import Sms from './routes/api/sms';
 
 class App {
   public express: express.Application;
@@ -16,6 +17,8 @@ class App {
       });
     });
     this.express.use('/', router);
+
+    router.get('api/sms', Sms.getme);
   }
 }
 
